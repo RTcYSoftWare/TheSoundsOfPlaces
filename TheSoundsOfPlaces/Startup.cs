@@ -50,7 +50,14 @@ namespace TheSoundsOfPlaces
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                //endpoints.MapRazorPages();
+
+                endpoints.MapControllerRoute(
+                    name: "home",
+                    pattern: "/",
+                    defaults: new { controller = "Home", action ="Index"});
+
+
             });
         }
     }
