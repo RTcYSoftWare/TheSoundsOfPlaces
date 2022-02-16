@@ -58,6 +58,15 @@ namespace TheSoundsOfPlaces
                     defaults: new { controller = "Home", action ="Index"});
 
 
+                endpoints.MapAreaControllerRoute(
+                    name: "adminLogin",
+                    areaName: "administration",
+                    pattern: "/administration/login",
+                    defaults: new { controller = "Login", action = "Index" });
+
+
+
+
             });
         }
     }
