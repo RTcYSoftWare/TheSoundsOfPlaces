@@ -19,8 +19,15 @@ using TheSoundsOfPlaces;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\turan\source\repos\TheSoundsOfPlaces\TheSoundsOfPlaces\Areas\Administration\Views\_ViewImports.cshtml"
+using TheSoundsOfPlaces.Areas.Administration.Models;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Areas/Administration/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1ed80a407a98825027a7de7ca6f49d0af6936649", @"/Areas/Administration/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"51ebb98ff33d04a705075fb4109726c70428fe26", @"/Areas/Administration/Views/_ViewImports.cshtml")]
     public class Areas_Administration_Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
