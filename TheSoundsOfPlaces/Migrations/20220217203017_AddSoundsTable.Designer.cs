@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TheSoundsOfPlaces.Database;
 
 namespace TheSoundsOfPlaces.Migrations
 {
     [DbContext(typeof(TheSoundsOfPlacesDBContext))]
-    partial class TheSoundsOfPlacesDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220217203017_AddSoundsTable")]
+    partial class AddSoundsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,38 +73,6 @@ namespace TheSoundsOfPlaces.Migrations
                     b.ToTable("Admins");
                 });
 
-            modelBuilder.Entity("TheSoundsOfPlaces.Database.Category", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Slug")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Categories");
-                });
-
             modelBuilder.Entity("TheSoundsOfPlaces.Database.Sound", b =>
                 {
                     b.Property<int>("Id")
@@ -160,20 +130,7 @@ namespace TheSoundsOfPlaces.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("Sounds");
-                });
-
-            modelBuilder.Entity("TheSoundsOfPlaces.Database.Sound", b =>
-                {
-                    b.HasOne("TheSoundsOfPlaces.Database.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

@@ -14,10 +14,14 @@ namespace TheSoundsOfPlaces.Database
         }
 
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Sound> Sounds { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Admin>().ToTable("Admins");
+            modelBuilder.Entity<Sound>().ToTable("Sounds");
+            modelBuilder.Entity<Category>().ToTable("Categories");
         }
 
 
