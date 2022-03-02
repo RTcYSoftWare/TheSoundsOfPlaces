@@ -97,7 +97,11 @@ namespace TheSoundsOfPlaces
                     name: "home",
                     pattern: "/",
                     defaults: new { controller = "Home", action = "Index" });
-
+                
+                endpoints.MapControllerRoute(
+                    name: "get-sounds",
+                    pattern: "/getSounds",
+                    defaults: new { controller = "Home", action = "GetSounds" });
 
                 endpoints.MapAreaControllerRoute(
                     name: "adminLogin",
@@ -105,7 +109,11 @@ namespace TheSoundsOfPlaces
                     pattern: "/administration/login",
                     defaults: new { controller = "Login", action = "Index" });
 
-
+                endpoints.MapAreaControllerRoute(
+                    name: "soundCreate",
+                    areaName: "administration",
+                    pattern: "/administration/sounds/create",
+                    defaults: new { controller = "Sound", action = "Create" });
 
 
             });
